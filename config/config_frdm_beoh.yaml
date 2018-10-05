@@ -1,0 +1,63 @@
+DBFile: "db/nuclei.db"
+DBTable: "frdm_beoh"
+OutputFile: "rootfiles/frdm_beoh.root"
+InitZ: 31
+InitN: 55
+InitCounts: 100000
+
+EventPlotter:
+    n_decay:
+        nbins: 100
+        low: 0.
+        up: 100.
+    decay_activity:
+        nbins: 10000
+        low: 0.
+        up: 1.E+3
+    n_ave:
+        nbins: 100
+        low: 0.
+        up: 100.
+
+DecaySimulator:
+    StdOutPrint: True
+#    StdOutPrint: False
+
+PopulationGIFMaker:
+#    PaletteId: 55 #Rainbow
+    PaletteId: 56 #kInvertedDarkBodyRadiator
+    PopulationPlotter:
+        low_n: 30
+        up_n: 80
+        low_z: 20
+        up_z: 50
+    ImgName: "img/frdm_beoh_86ga"
+    ConvertCommand: "convert -layers optimize -loop 0 -delay 40"
+    ConvertCommandLast: "-delay 240"
+    TimeList:
+        - 0.0
+        - 0.003125
+        - 0.00625
+        - 0.0125
+        - 0.025
+        - 0.05
+        - 0.1
+        - 0.2
+        - 0.4
+        - 0.8
+        - 1.6
+        - 3.2
+        - 6.4
+        - 12.8
+        - 25.6
+        - 51.2
+        - 102.4
+        - 204.8
+        - 409.6
+        - 819.2
+        - 1638.4
+        - 3276.8
+        - 6553.6
+        - 13107.2
+        - 26214.4
+        - 52428.8

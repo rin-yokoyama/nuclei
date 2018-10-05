@@ -1,33 +1,45 @@
 import ROOT
+import yaml
+import sys
 from modules.NuclideGenerator import NuclideGenerator
 from modules.NuclidesPlotter import NuclidesPlotter
 from modules.DecaySimulator import DecaySimulator
 from modules.Nuclide import NuclidePopulation
+from modules.DecaySimulator import DecaySimulator
+from modules.EventPlotter import EventPlotter
+#from modules.PopulationPlotter import PopulationPlotter
+from modules.PopulationGIFMaker import PopulationGIFMaker
 
 if __name__ == '__main__':
-    nucl_gen = NuclideGenerator("db/nuclei.db")
-    nucl_list = nucl_gen.generateNuclides("frdm_beoh")
-    print len(nucl_list)
-    plotter = NuclidesPlotter(nucl_list)
-    plotter.SetPlotRange([40,100],[20,40])
-    hist1 = plotter.PlotHalfLife() 
-    hist2 = plotter.PlotPxn(1) 
+    yaml_file = open(sys.argv[1],'r')
+    config = yaml.load(yaml_file)
+    yaml_file.close()
+
+    nucl_gen = NuclideGenerator(config['DBFile'])
+    nucl_list = nucl_gen.generateNuclides(config['DBTable'])
+    print "loaded nuclear proterties of " + str(len(nucl_list)) + " nuclei from " + config['DBTable']
 
     init_population = []
-    ga86 = NuclidePopulation()
-    ga86.z = 31
-    ga86.n = 55
-    ga86.counts = 100
-    init_population.append(ga86)
-    simulator = DecaySimulator(nucl_list,init_population)
-    decay_list = simulator.simulateDecays()
-    print decay_list
-    hist3 = ROOT.TH1F("n_decay","n_decay",100,0,100)
-    for decay in decay_list:
-        hist3.Fill(len(decay.event_list))
 
-    rootfile = ROOT.TFile("test.root","recreate")
-    hist1.Write()
-    hist2.Write()
-    hist3.Write()
+    # initial nuclide
+    n_init = NuclidePopulation()
+    n_init.z = config['InitZ']
+    n_init.n = config['InitN']
+    n_init.counts = config['InitCounts']
+    init_population.append(n_init)
+
+    simulator = DecaySimulator(nucl_list,init_population)
+    simulator.configure(config['DecaySimulator'])
+    decay_list = simulator.simulateDecays()
+
+    gif_maker = PopulationGIFMaker()
+    gif_maker.configure(config['PopulationGIFMaker'])
+    gif_maker.MakeGIFImage(decay_list)
+    gif_maker.MakeGIF()
+
+    rootfile = ROOT.TFile(config['OutputFile'],"recreate")
+    event_plotter = EventPlotter(config['EventPlotter'])
+    event_plotter.fillDecays(decay_list)
+    event_plotter.writeHistograms()
+
     rootfile.Close() 
