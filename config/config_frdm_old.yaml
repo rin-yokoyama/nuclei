@@ -1,6 +1,6 @@
 DBFile: "db/nuclei.db"
 DBTable: "frdm_old"
-OutputFile: "rootfiles/frdm_old"
+OutputFile: "rootfiles/frdm_old.root"
 InitZ: 31
 InitN: 55
 InitCounts: 100000
@@ -61,3 +61,5 @@ PopulationGIFMaker:
         - 13107.2
         - 26214.4
         - 52428.8
+        - 104857.6
+        - 1.E+10
