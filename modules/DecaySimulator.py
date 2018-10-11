@@ -36,7 +36,6 @@ class DecaySimulator(object):
         rand = self.rand.Rndm()
         for (x, pxn) in enumerate(nucl_property[0].pn): # choses number of neutron to emit from the random number
             sum_pxn = sum_pxn + pxn
-            print "rand: " + str(rand) + " sum: " + str(sum_pxn) + " " + str(rand>sum_pxn)
             if rand > sum_pxn:
                 event.n_neutron = x
 

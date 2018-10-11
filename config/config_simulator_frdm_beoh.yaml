@@ -1,0 +1,43 @@
+DBFile: "db/nuclei_exp.db"
+DBTable: "frdm_beoh"
+PickledFile: pickled/frdm_beoh_96ga_exp.pkl
+NWorkers: 10
+InitialNuclides:
+    - InitZ: 31
+      InitN: 65
+      InitCounts: &n_trial 100000
+#    - InitZ: 31
+#      InitN: 56
+#      InitCounts: *n_trial
+#    - InitZ: 31
+#      InitN: 57
+#      InitCounts: *n_trial
+#    - InitZ: 31
+#      InitN: 58
+#      InitCounts: *n_trial
+#    - InitZ: 31
+#      InitN: 59
+#      InitCounts: *n_trial
+#    - InitZ: 31
+#      InitN: 60
+#      InitCounts: *n_trial
+#    - InitZ: 31
+#      InitN: 61
+#      InitCounts: *n_trial
+#    - InitZ: 31
+#      InitN: 62
+#      InitCounts: *n_trial
+#    - InitZ: 31
+#      InitN: 63
+#      InitCounts: *n_trial
+#    - InitZ: 31
+#      InitN: 64
+#      InitCounts: *n_trial
+#    - InitZ: 31
+#      InitN: 65
+#      InitCounts: *n_trial
+
+DecaySimulator:
+#    StdOutPrint: True
+    StdOutPrint: False
+

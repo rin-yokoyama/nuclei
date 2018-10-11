@@ -1,0 +1,43 @@
+DBFile: "db/nuclei_exp.db"
+DBTable: "cdft"
+PickledFile: pickled/cdft_ga_exp.pkl.bz2
+NWorkers: 20
+InitialNuclides:
+    - InitZ: 31
+      InitN: 55
+      InitCounts: &n_trial 100000
+    - InitZ: 31
+      InitN: 56
+      InitCounts: *n_trial
+    - InitZ: 31
+      InitN: 57
+      InitCounts: *n_trial
+    - InitZ: 31
+      InitN: 58
+      InitCounts: *n_trial
+    - InitZ: 31
+      InitN: 59
+      InitCounts: *n_trial
+    - InitZ: 31
+      InitN: 60
+      InitCounts: *n_trial
+    - InitZ: 31
+      InitN: 61
+      InitCounts: *n_trial
+    - InitZ: 31
+      InitN: 62
+      InitCounts: *n_trial
+    - InitZ: 31
+      InitN: 63
+      InitCounts: *n_trial
+    - InitZ: 31
+      InitN: 64
+      InitCounts: *n_trial
+    - InitZ: 31
+      InitN: 65
+      InitCounts: *n_trial
+
+DecaySimulator:
+#    StdOutPrint: True
+    StdOutPrint: False
+

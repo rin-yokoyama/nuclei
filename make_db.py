@@ -2,7 +2,9 @@
 import sqlite3
 import re
 
-db = sqlite3.connect('db/nuclei.db')
+#db = sqlite3.connect('db/nuclei.db')
+db = sqlite3.connect('db/nuclei_exp.db')
+
 # FRDM + HF statistical model by Moller
 sql = "create table frdm_beoh(Z integer, N integer, A integer, P0n float, P1n float, P2n float, P3n float, P4n float, P5n float, P6n float, P7n float, P8n float, P9n float, P10n float, En_ float, n_ float, exp integer);"
 db.execute(sql)
@@ -83,6 +85,29 @@ for line in txt_file:
     db.execute(sql)
     
 txt_file.close()
+
+# overwrites halflives by experimental values if exist
+txt_file = open('txtdata/nubase.txt','r')
+for line in txt_file:
+    words = list(filter(None, re.split('\t|\r', line)))
+    if words[0].isdigit():
+        z = words[0]
+        n = str(int(words[1]) - int(words[0]))
+        hl = words[3]
+        if hl == "stbl":
+            hl = "1E+24"
+        sql = "update frdm_beoh set halflife = " + hl + " where Z = " + z + " AND N = " + n
+        db.execute(sql)
+        sql = "update frdm_old set halflife = " + hl + " where Z = " + z + " AND N = " + n
+        db.execute(sql)
+        sql = "update cdft set halflife = " + hl + " where Z = " + z + " AND N = " + n
+        db.execute(sql)
+        sql = "update edm set halflife = " + hl + " where Z = " + z + " AND N = " + n
+        db.execute(sql)
+        print "updated halflife of (" + z + "," + n + ") with exp value: " + hl + " sec"
+    
+txt_file.close()
+
 
 db.commit()
 db.close()

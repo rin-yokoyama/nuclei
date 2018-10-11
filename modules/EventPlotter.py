@@ -5,32 +5,33 @@ class EventPlotter:
     # A class for plotting DecayEvent objects as a ROOT histograms
     def __init__(self, config_yaml):
         self.config = config_yaml
-        self.hist_list = []
-        h_config = self.config['n_decay']
-        # a histogram of the total number of decays in each decay chain
-        self.hist_list.append(ROOT.TH1D("n_decay","n_decay",int(h_config['nbins']),float(h_config['low']),float(h_config['up'])))
-        h_config = self.config['decay_activity']
-        # a histogram of the time when the decay occured in each decay chain
-        self.hist_list.append(ROOT.TH1D("decay_activity","decay_activity",int(h_config['nbins']),float(h_config['low']),float(h_config['up'])))
-        h_config = self.config['n_ave']
-        # a histogram of the total number of neutrons emitted in each decay chain
-        self.hist_list.append(ROOT.TH1D("n_ave","n_ave",h_config['nbins'],h_config['low'],h_config['up']))
+        self.hist_names = ['n_decay','decay_activity','activity_0n','activity_1n','activity_2n','activity_3n','n_ave']
+        self.hist_dict = dict()
+        for hist_name in self.hist_names:
+            h_config = self.config[hist_name]
+            self.hist_dict.update({hist_name: ROOT.TH1D(hist_name,hist_name,int(h_config['nbins']),float(h_config['low']),float(h_config['up']))})
 
     def fillDecays(self,decay_list):
         # fills decay events to the histograms
-        h_n_decay = filter(lambda x: x.GetName() == "n_decay",self.hist_list)[0]
-        h_decay_time = filter(lambda x: x.GetName() == "decay_activity",self.hist_list)[0]
-        h_n_ave = filter(lambda x: x.GetName() == "n_ave",self.hist_list)[0]
         for decay in decay_list:
-            h_n_decay.Fill(len(decay.event_list))
+            self.hist_dict['n_decay'].Fill(len(decay.event_list))
             n_neutron = 0
             for event in decay.event_list:
-                h_decay_time.Fill(event.time)
+                self.hist_dict['decay_activity'].Fill(event.time)
+                if event.n_neutron == 0:
+                    self.hist_dict['activity_0n'].Fill(event.time)
+                elif event.n_neutron == 1:
+                    self.hist_dict['activity_1n'].Fill(event.time)
+                elif event.n_neutron == 2:
+                    self.hist_dict['activity_2n'].Fill(event.time)
+                elif event.n_neutron == 3:
+                    self.hist_dict['activity_3n'].Fill(event.time)
+                   
                 n_neutron = n_neutron + event.n_neutron
-            h_n_ave.Fill(n_neutron)
+            self.hist_dict['n_ave'].Fill(n_neutron)
 
     def writeHistograms(self):
         # needs to be called after a ROOT file is opened
-        for hist in self.hist_list:
-            hist.Write()
+        for key in self.hist_dict:
+            self.hist_dict[key].Write()
 

@@ -1,0 +1,21 @@
+PickledFile: "pickled/frdm_old_ga_exp.pkl"
+OutputFile: "rootfiles/frdm_old_ga_exp.root"
+
+EventPlotter:
+    n_decay:
+        nbins: 100
+        low: 0.
+        up: 100.
+    decay_activity: &activity_hist
+        nbins: 20000
+        low: 0.
+        up: 2.
+    activity_0n: *activity_hist
+    activity_1n: *activity_hist
+    activity_2n: *activity_hist
+    activity_3n: *activity_hist
+    n_ave:
+        nbins: 100
+        low: 0.
+        up: 100.
+
