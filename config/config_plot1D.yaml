@@ -23,7 +23,7 @@ PopulationGIFMaker:
     PaletteId: 56 #kInvertedDarkBodyRadiator
     PopulationPlotter:
         low_n: 45
-        up_n: 65
+        up_n: 66
         low_z: 31
         up_z: 43
         low_a: 80
@@ -60,4 +60,8 @@ PopulationGIFMaker:
         - 26214.4
         - 52428.8
         - 104857.6
+        - 1.E+6
+        - 1.E+7
+        - 1.E+8
+        - 1.E+9
         - 1.E+10

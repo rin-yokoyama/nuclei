@@ -11,17 +11,22 @@ if __name__ == '__main__':
     config = yaml.load(yaml_file)
     yaml_file.close()
 
-    print "opening " + config['PickledFile'] + "..."
-    #input_file = bz2.BZ2File(config['PickledFile'],'rb')
-    input_file = open(config['PickledFile'],'rb')
-    decay_list = pickle.load(input_file)
-    input_file.close()
+    print "opening " + config['PickledFile1'] + "..."
+    input_file1 = open(config['PickledFile1'],'rb')
+    decay_list1 = pickle.load(input_file1)
+    input_file1.close()
+    print "opened"
+
+    print "opening " + config['PickledFile2'] + "..."
+    input_file2 = open(config['PickledFile2'],'rb')
+    decay_list2 = pickle.load(input_file2)
+    input_file2.close()
     print "opened"
 
     print "making GIF animation..."
     gif_maker = PopulationGIFMaker()
     gif_maker.configure(config['PopulationGIFMaker'])
-    gif_maker.MakeGIFImage(decay_list)
+    gif_maker.Make2DandAGIFImage(decay_list1,decay_list2,config['Name1'],config['Name2'])
     gif_maker.MakeGIF()
 
 

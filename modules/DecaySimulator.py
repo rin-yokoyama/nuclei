@@ -37,7 +37,7 @@ class DecaySimulator(object):
         for (x, pxn) in enumerate(nucl_property[0].pn): # choses number of neutron to emit from the random number
             sum_pxn = sum_pxn + pxn
             if rand > sum_pxn:
-                event.n_neutron = x
+                event.n_neutron = x+1
 
         if self.if_print: # prints the decay event if StdOutPrint is ture
             print "(N,Z): (" + str(event.n) + "," + str(event.z) + "), neutron: " + str(event.n_neutron) + ", time: " + str(event.time)

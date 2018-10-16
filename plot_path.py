@@ -21,7 +21,7 @@ if __name__ == '__main__':
     print "making GIF animation..."
     gif_maker = PopulationGIFMaker()
     gif_maker.configure(config['PopulationGIFMaker'])
-    gif_maker.MakeGIFImage(decay_list)
+    gif_maker.MakePATHGIFImage(decay_list)
     gif_maker.MakeGIF()
 
 

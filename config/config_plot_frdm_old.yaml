@@ -10,7 +10,7 @@ PopulationGIFMaker:
         low_z: 20
         up_z: 50
         count_max: 150000
-    ImgName: "img/frdm_old_ga_exp"
+    ImgName: "img/frdm_old_ga_exp_2"
     ConvertCommand: "convert -layers optimize -loop 0 -delay 40"
     ConvertCommandLast: "-delay 240"
     TimeList:

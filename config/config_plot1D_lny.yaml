@@ -1,21 +1,35 @@
-#PickledFile: "pickled/frdm_beoh_ga_exp.pkl"
-PickledFile: "pickled/frdm_beoh_86ga_exp.pkl"
+PickledFile1: "pickled/frdm_beoh_95ga_exp.pkl"
+PickledFile2: "pickled/frdm_old_95ga_exp.pkl"
+Name1: "frdm_beoh"
+Name2: "frdm_old"
+
+EventPlotter:
+    n_decay:
+        nbins: 100
+        low: 0.
+        up: 100.
+    decay_activity:
+        nbins: 10000
+        low: 0.
+        up: 1.E+3
+    n_ave:
+        nbins: 100
+        low: 0.
+        up: 100.
 
 PopulationGIFMaker:
     Logy: False
 #    PaletteId: 55 #Rainbow
     PaletteId: 56 #kInvertedDarkBodyRadiator
     PopulationPlotter:
-        low_n: 30
-        up_n: 80
-        low_z: 20
-        up_z: 50
-        low_a: 50
+        low_n: 45
+        up_n: 66
+        low_z: 31
+        up_z: 43
+        low_a: 80
         up_a: 100
-        count_max: 150000
-        #count_max: 150
-    #ImgName: "img/frdm_beoh_ga_exp_2"
-    ImgName: "img/frdm_beoh_86ga_exp_path"
+        count_max: 80000
+    ImgName: "img/ga_exp_a_95ga_lny"
     ConvertCommand: "convert -layers optimize -loop 0 -delay 40"
     ConvertCommandLast: "-delay 240"
     TimeList:
@@ -46,8 +60,8 @@ PopulationGIFMaker:
         - 26214.4
         - 52428.8
         - 104857.6
-        - 1.048576E+6
-        - 1.0E+7
-        - 1.0E+8
-        - 1.0E+9
+        - 1.E+6
+        - 1.E+7
+        - 1.E+8
+        - 1.E+9
         - 1.E+10

@@ -1,10 +1,11 @@
 DBFile: "db/nuclei_exp.db"
 DBTable: "frdm_old"
-PickledFile: pickled/frdm_old_96ga_exp.pkl
+PickledFile: pickled/frdm_old_95ga_exp.pkl
+#PickledFile: tmp.pkl
 NWorkers: 20
 InitialNuclides:
     - InitZ: 31
-      InitN: 65
+      InitN: 64
       InitCounts: &n_trial 100000
 #    - InitZ: 31
 #      InitN: 56
