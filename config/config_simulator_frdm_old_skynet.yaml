@@ -1,0 +1,550 @@
+DBFile: "db/nuclei_exp.db"
+DBTable: "frdm_old"
+PickledFile: pickled/frdm_old_skynet_exp.pkl
+NWorkers: 20
+DecaySimulator:
+    StdOutPrint: False
+InitialNuclides:
+    - InitZ: 21
+      InitN: 34
+      InitCounts: 1
+    - InitZ: 21
+      InitN: 35
+      InitCounts: 1
+    - InitZ: 21
+      InitN: 36
+      InitCounts: 34
+    - InitZ: 21
+      InitN: 37
+      InitCounts: 3
+    - InitZ: 21
+      InitN: 38
+      InitCounts: 125
+    - InitZ: 21
+      InitN: 39
+      InitCounts: 13
+    - InitZ: 21
+      InitN: 40
+      InitCounts: 19209
+    - InitZ: 21
+      InitN: 41
+      InitCounts: 2
+    - InitZ: 21
+      InitN: 42
+      InitCounts: 315
+    - InitZ: 21
+      InitN: 43
+      InitCounts: 10
+    - InitZ: 21
+      InitN: 44
+      InitCounts: 947
+    - InitZ: 22
+      InitN: 36
+      InitCounts: 2
+    - InitZ: 22
+      InitN: 37
+      InitCounts: 3
+    - InitZ: 22
+      InitN: 38
+      InitCounts: 166
+    - InitZ: 22
+      InitN: 39
+      InitCounts: 25
+    - InitZ: 22
+      InitN: 40
+      InitCounts: 7307
+    - InitZ: 22
+      InitN: 41
+      InitCounts: 250
+    - InitZ: 22
+      InitN: 42
+      InitCounts: 4275
+    - InitZ: 22
+      InitN: 43
+      InitCounts: 2
+    - InitZ: 22
+      InitN: 44
+      InitCounts: 429
+    - InitZ: 22
+      InitN: 46
+      InitCounts: 7
+    - InitZ: 23
+      InitN: 39
+      InitCounts: 1
+    - InitZ: 23
+      InitN: 40
+      InitCounts: 90
+    - InitZ: 23
+      InitN: 41
+      InitCounts: 2
+    - InitZ: 23
+      InitN: 42
+      InitCounts: 76
+    - InitZ: 23
+      InitN: 43
+      InitCounts: 4
+    - InitZ: 23
+      InitN: 44
+      InitCounts: 229
+    - InitZ: 23
+      InitN: 45
+      InitCounts: 26
+    - InitZ: 23
+      InitN: 46
+      InitCounts: 1519
+    - InitZ: 23
+      InitN: 47
+      InitCounts: 46
+    - InitZ: 23
+      InitN: 48
+      InitCounts: 1547
+    - InitZ: 23
+      InitN: 49
+      InitCounts: 218
+    - InitZ: 23
+      InitN: 50
+      InitCounts: 2986
+    - InitZ: 24
+      InitN: 40
+      InitCounts: 1
+    - InitZ: 24
+      InitN: 42
+      InitCounts: 3
+    - InitZ: 24
+      InitN: 43
+      InitCounts: 2
+    - InitZ: 24
+      InitN: 44
+      InitCounts: 81
+    - InitZ: 24
+      InitN: 45
+      InitCounts: 26
+    - InitZ: 24
+      InitN: 46
+      InitCounts: 2721
+    - InitZ: 24
+      InitN: 47
+      InitCounts: 319
+    - InitZ: 24
+      InitN: 48
+      InitCounts: 12424
+    - InitZ: 24
+      InitN: 49
+      InitCounts: 1443
+    - InitZ: 24
+      InitN: 50
+      InitCounts: 4418
+    - InitZ: 25
+      InitN: 44
+      InitCounts: 1
+    - InitZ: 25
+      InitN: 46
+      InitCounts: 63
+    - InitZ: 25
+      InitN: 47
+      InitCounts: 11
+    - InitZ: 25
+      InitN: 48
+      InitCounts: 225
+    - InitZ: 25
+      InitN: 49
+      InitCounts: 34
+    - InitZ: 25
+      InitN: 50
+      InitCounts: 11522
+    - InitZ: 26
+      InitN: 46
+      InitCounts: 29
+    - InitZ: 26
+      InitN: 47
+      InitCounts: 18
+    - InitZ: 26
+      InitN: 48
+      InitCounts: 1063
+    - InitZ: 26
+      InitN: 49
+      InitCounts: 829
+    - InitZ: 26
+      InitN: 50
+      InitCounts: 86601
+    - InitZ: 27
+      InitN: 48
+      InitCounts: 35
+    - InitZ: 27
+      InitN: 49
+      InitCounts: 16
+    - InitZ: 27
+      InitN: 50
+      InitCounts: 5279
+    - InitZ: 27
+      InitN: 51
+      InitCounts: 174
+    - InitZ: 27
+      InitN: 52
+      InitCounts: 25367
+    - InitZ: 27
+      InitN: 53
+      InitCounts: 7
+    - InitZ: 27
+      InitN: 54
+      InitCounts: 442
+    - InitZ: 28
+      InitN: 48
+      InitCounts: 23
+    - InitZ: 28
+      InitN: 49
+      InitCounts: 48
+    - InitZ: 28
+      InitN: 50
+      InitCounts: 25504
+    - InitZ: 28
+      InitN: 51
+      InitCounts: 107
+    - InitZ: 28
+      InitN: 52
+      InitCounts: 626124
+    - InitZ: 28
+      InitN: 54
+      InitCounts: 928
+    - InitZ: 29
+      InitN: 50
+      InitCounts: 366
+    - InitZ: 29
+      InitN: 51
+      InitCounts: 10
+    - InitZ: 29
+      InitN: 52
+      InitCounts: 633
+    - InitZ: 29
+      InitN: 53
+      InitCounts: 46
+    - InitZ: 29
+      InitN: 54
+      InitCounts: 2236
+    - InitZ: 29
+      InitN: 55
+      InitCounts: 103
+    - InitZ: 29
+      InitN: 56
+      InitCounts: 73088
+    - InitZ: 29
+      InitN: 57
+      InitCounts: 10
+    - InitZ: 29
+      InitN: 58
+      InitCounts: 244
+    - InitZ: 29
+      InitN: 60
+      InitCounts: 1
+    - InitZ: 30
+      InitN: 50
+      InitCounts: 1
+    - InitZ: 30
+      InitN: 52
+      InitCounts: 517
+    - InitZ: 30
+      InitN: 53
+      InitCounts: 37
+    - InitZ: 30
+      InitN: 54
+      InitCounts: 1453
+    - InitZ: 30
+      InitN: 55
+      InitCounts: 94
+    - InitZ: 30
+      InitN: 56
+      InitCounts: 89296
+    - InitZ: 30
+      InitN: 57
+      InitCounts: 5
+    - InitZ: 30
+      InitN: 58
+      InitCounts: 2554
+    - InitZ: 30
+      InitN: 60
+      InitCounts: 9
+    - InitZ: 31
+      InitN: 54
+      InitCounts: 34
+    - InitZ: 31
+      InitN: 55
+      InitCounts: 8
+    - InitZ: 31
+      InitN: 56
+      InitCounts: 387
+    - InitZ: 31
+      InitN: 57
+      InitCounts: 6
+    - InitZ: 31
+      InitN: 58
+      InitCounts: 1118
+    - InitZ: 31
+      InitN: 59
+      InitCounts: 14
+    - InitZ: 31
+      InitN: 60
+      InitCounts: 914
+    - InitZ: 31
+      InitN: 61
+      InitCounts: 46
+    - InitZ: 31
+      InitN: 62
+      InitCounts: 4341
+    - InitZ: 31
+      InitN: 63
+      InitCounts: 83
+    - InitZ: 31
+      InitN: 64
+      InitCounts: 8377
+    - InitZ: 32
+      InitN: 56
+      InitCounts: 9
+    - InitZ: 32
+      InitN: 57
+      InitCounts: 1
+    - InitZ: 32
+      InitN: 58
+      InitCounts: 160
+    - InitZ: 32
+      InitN: 59
+      InitCounts: 4
+    - InitZ: 32
+      InitN: 60
+      InitCounts: 626
+    - InitZ: 32
+      InitN: 61
+      InitCounts: 42
+    - InitZ: 32
+      InitN: 62
+      InitCounts: 7985
+    - InitZ: 32
+      InitN: 63
+      InitCounts: 112
+    - InitZ: 32
+      InitN: 64
+      InitCounts: 13675
+    - InitZ: 33
+      InitN: 60
+      InitCounts: 3
+    - InitZ: 33
+      InitN: 61
+      InitCounts: 2
+    - InitZ: 33
+      InitN: 62
+      InitCounts: 192
+    - InitZ: 33
+      InitN: 63
+      InitCounts: 9
+    - InitZ: 33
+      InitN: 64
+      InitCounts: 462
+    - InitZ: 33
+      InitN: 65
+      InitCounts: 21
+    - InitZ: 33
+      InitN: 66
+      InitCounts: 523
+    - InitZ: 33
+      InitN: 67
+      InitCounts: 61
+    - InitZ: 33
+      InitN: 68
+      InitCounts: 1487
+    - InitZ: 33
+      InitN: 69
+      InitCounts: 85
+    - InitZ: 33
+      InitN: 70
+      InitCounts: 10230
+    - InitZ: 34
+      InitN: 62
+      InitCounts: 14
+    - InitZ: 34
+      InitN: 63
+      InitCounts: 1
+    - InitZ: 34
+      InitN: 64
+      InitCounts: 78
+    - InitZ: 34
+      InitN: 65
+      InitCounts: 3
+    - InitZ: 34
+      InitN: 66
+      InitCounts: 1134
+    - InitZ: 34
+      InitN: 67
+      InitCounts: 95
+    - InitZ: 34
+      InitN: 68
+      InitCounts: 3099
+    - InitZ: 34
+      InitN: 69
+      InitCounts: 186
+    - InitZ: 34
+      InitN: 70
+      InitCounts: 12646
+    - InitZ: 35
+      InitN: 66
+      InitCounts: 8
+    - InitZ: 35
+      InitN: 67
+      InitCounts: 2
+    - InitZ: 35
+      InitN: 68
+      InitCounts: 113
+    - InitZ: 35
+      InitN: 69
+      InitCounts: 27
+    - InitZ: 35
+      InitN: 70
+      InitCounts: 1584
+    - InitZ: 35
+      InitN: 71
+      InitCounts: 108
+    - InitZ: 35
+      InitN: 72
+      InitCounts: 9952
+    - InitZ: 35
+      InitN: 73
+      InitCounts: 27
+    - InitZ: 35
+      InitN: 74
+      InitCounts: 408
+    - InitZ: 36
+      InitN: 66
+      InitCounts: 3
+    - InitZ: 36
+      InitN: 68
+      InitCounts: 433
+    - InitZ: 36
+      InitN: 69
+      InitCounts: 38
+    - InitZ: 36
+      InitN: 70
+      InitCounts: 3225
+    - InitZ: 36
+      InitN: 71
+      InitCounts: 219
+    - InitZ: 36
+      InitN: 72
+      InitCounts: 15954
+    - InitZ: 36
+      InitN: 73
+      InitCounts: 1676
+    - InitZ: 36
+      InitN: 74
+      InitCounts: 1350
+    - InitZ: 37
+      InitN: 68
+      InitCounts: 4
+    - InitZ: 37
+      InitN: 69
+      InitCounts: 1
+    - InitZ: 37
+      InitN: 70
+      InitCounts: 104
+    - InitZ: 37
+      InitN: 71
+      InitCounts: 17
+    - InitZ: 37
+      InitN: 72
+      InitCounts: 2466
+    - InitZ: 37
+      InitN: 73
+      InitCounts: 463
+    - InitZ: 37
+      InitN: 74
+      InitCounts: 962
+    - InitZ: 37
+      InitN: 75
+      InitCounts: 15
+    - InitZ: 37
+      InitN: 76
+      InitCounts: 506
+    - InitZ: 37
+      InitN: 77
+      InitCounts: 30
+    - InitZ: 37
+      InitN: 78
+      InitCounts: 874
+    - InitZ: 37
+      InitN: 79
+      InitCounts: 22
+    - InitZ: 37
+      InitN: 80
+      InitCounts: 37
+    - InitZ: 37
+      InitN: 81
+      InitCounts: 679
+    - InitZ: 37
+      InitN: 82
+      InitCounts: 4064
+    - InitZ: 38
+      InitN: 68
+      InitCounts: 1
+    - InitZ: 38
+      InitN: 70
+      InitCounts: 56
+    - InitZ: 38
+      InitN: 71
+      InitCounts: 3
+    - InitZ: 38
+      InitN: 72
+      InitCounts: 323
+    - InitZ: 38
+      InitN: 73
+      InitCounts: 40
+    - InitZ: 38
+      InitN: 74
+      InitCounts: 88
+    - InitZ: 38
+      InitN: 75
+      InitCounts: 28
+    - InitZ: 38
+      InitN: 76
+      InitCounts: 305
+    - InitZ: 38
+      InitN: 77
+      InitCounts: 101
+    - InitZ: 38
+      InitN: 78
+      InitCounts: 3808
+    - InitZ: 38
+      InitN: 79
+      InitCounts: 94
+    - InitZ: 38
+      InitN: 80
+      InitCounts: 183
+    - InitZ: 38
+      InitN: 81
+      InitCounts: 360
+    - InitZ: 38
+      InitN: 82
+      InitCounts: 7108
+    - InitZ: 39
+      InitN: 72
+      InitCounts: 1
+    - InitZ: 39
+      InitN: 74
+      InitCounts: 2
+    - InitZ: 39
+      InitN: 76
+      InitCounts: 17
+    - InitZ: 39
+      InitN: 77
+      InitCounts: 4
+    - InitZ: 39
+      InitN: 78
+      InitCounts: 121
+    - InitZ: 39
+      InitN: 79
+      InitCounts: 7
+    - InitZ: 39
+      InitN: 80
+      InitCounts: 34
+    - InitZ: 39
+      InitN: 81
+      InitCounts: 84
+    - InitZ: 39
+      InitN: 82
+      InitCounts: 13456

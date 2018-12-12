@@ -72,12 +72,20 @@ class PopulationGIFMaker(object):
             hist_b.SetTitle("Population at t = "+str(time)+"sec")
             hist_b.GetXaxis().SetTitle("N")
             hist_b.GetYaxis().SetTitle("Z")
+            hist_b.GetXaxis().SetLabelSize(0.05)
+            hist_b.GetYaxis().SetLabelSize(0.05)
+            hist_b.GetZaxis().SetLabelSize(0.05)
+            hist_b.GetXaxis().SetTitleSize(0.05)
+            hist_b.GetYaxis().SetTitleSize(0.05)
+            hist_b.GetYaxis().SetNdivisions(505)
             hist_b.Draw("box")
             hist.Draw("colz same")
-            ROOT.gPad.SetLogz()
+            if self.log_y:
+                ROOT.gPad.SetLogz()
             label.DrawText(0.5,0.88,"number of nuclides populated: "+str(n_populated))
             ROOT.gPad.Print(self.img_name + "_%02d.png" % i)
         ROOT.gPad.Print(self.img_name + "_last.png")
+        ROOT.gPad.Print(self.img_name + "_last.eps")
 
     def MakePATHGIFImage2(self, decay_list1, decay_list2, name1, name2):
         # print the population images at the times which are specified
@@ -199,7 +207,8 @@ class PopulationGIFMaker(object):
             hist1.GetXaxis().SetTitle("N")
             hist1.GetYaxis().SetTitle("Z")
             hist1.Draw("colz")
-            #pad1_1.SetLogz()
+            if self.log_y:
+                pad1_1.SetLogz()
 
             pad1.cd(2)
             hist2 = self.plotter.plotPopulation(decay_list2,time)
@@ -208,7 +217,8 @@ class PopulationGIFMaker(object):
             hist2.GetXaxis().SetTitle("N")
             hist2.GetYaxis().SetTitle("Z")
             hist2.Draw("colz")
-            #pad1_2.SetLogz()
+            if self.log_y:
+                pad1_2.SetLogz()
 
             canv.cd(2)
             hist3 = self.plotter.plotPopulationA(decay_list1,time)

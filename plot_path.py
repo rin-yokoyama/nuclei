@@ -4,6 +4,7 @@ import yaml
 import pickle
 import bz2
 from modules.EventPlotter import EventPlotter
+from modules.PopulationPlotter import PopulationPlotter
 from modules.PopulationGIFMaker import PopulationGIFMaker
 
 if __name__ == '__main__':
@@ -24,4 +25,11 @@ if __name__ == '__main__':
     gif_maker.MakePATHGIFImage(decay_list)
     gif_maker.MakeGIF()
 
+    output_file = ROOT.TFile(config['OutputFile'],"recreate")
+    plotter = PopulationPlotter()
+    plotter.configure(config['PopulationGIFMaker']['PopulationPlotter'])
+    hist = plotter.plotPopulationA(decay_list,1E+20)
+    hist.GetXaxis().SetTitle("A")
+    hist.Write()
+    output_file.Close()
 

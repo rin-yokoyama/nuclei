@@ -1,5 +1,6 @@
 DBFile: "db/nuclei_exp.db"
 DBTable: "frdm_beoh"
+OutputFile: "output.root"
 PickledFile: pickled/frdm_beoh_95ga_exp.pkl
 NWorkers: 20
 InitialNuclides:

@@ -1,21 +1,21 @@
-#PickledFile: "pickled/frdm_beoh_ga_exp.pkl"
-PickledFile: "pickled/frdm_beoh_86ga_exp.pkl"
+PickledFile: "pickled/frdm_beoh_95ga_exp.pkl"
+OutputFile: "rootfiles/frdm_beoh_95ga_exp.root"
 
 PopulationGIFMaker:
-    Logy: False
+    Logy: True
 #    PaletteId: 55 #Rainbow
     PaletteId: 56 #kInvertedDarkBodyRadiator
     PopulationPlotter:
-        low_n: 30
-        up_n: 80
-        low_z: 20
-        up_z: 50
-        low_a: 50
-        up_a: 100
-        count_max: 150000
+        low_n: 45
+        up_n: 66
+        low_z: 30
+        up_z: 43
+        low_a: 85
+        up_a: 96
+        count_max: 100000
         #count_max: 150
     #ImgName: "img/frdm_beoh_ga_exp_2"
-    ImgName: "img/frdm_beoh_86ga_exp_path"
+    ImgName: "img/frdm_beoh_95ga_exp_path"
     ConvertCommand: "convert -layers optimize -loop 0 -delay 40"
     ConvertCommandLast: "-delay 240"
     TimeList:
@@ -51,3 +51,4 @@ PopulationGIFMaker:
         - 1.0E+8
         - 1.0E+9
         - 1.E+10
+        - 1.E+20

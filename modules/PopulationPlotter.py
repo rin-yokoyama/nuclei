@@ -62,7 +62,7 @@ class PopulationPlotter(object):
            else:
                nucleus = copy.copy(nucl_after[0])
            hist.Fill(nucleus.n+nucleus.z)
-        hist.SetMinimum(0)
+        hist.SetMinimum(0.1)
         hist.SetMaximum(self.count_max)
         return hist
 

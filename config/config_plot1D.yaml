@@ -1,5 +1,5 @@
-PickledFile1: "pickled/frdm_beoh_ga_exp.pkl"
-PickledFile2: "pickled/frdm_old_ga_exp.pkl"
+PickledFile1: "pickled/frdm_beoh_skynet_exp.pkl"
+PickledFile2: "pickled/frdm_old_skynet_exp.pkl"
 Name1: "frdm_beoh"
 Name2: "frdm_old"
 
@@ -22,14 +22,14 @@ PopulationGIFMaker:
 #    PaletteId: 55 #Rainbow
     PaletteId: 56 #kInvertedDarkBodyRadiator
     PopulationPlotter:
-        low_n: 45
-        up_n: 66
-        low_z: 31
-        up_z: 43
-        low_a: 80
-        up_a: 100
-        count_max: 200000
-    ImgName: "img/ga_exp_comparison_logy"
+        low_n: 20
+        up_n: 90
+        low_z: 20
+        up_z: 60
+        low_a: 50
+        up_a: 150
+        count_max: 800000
+    ImgName: "img/skynet_exp_comparison_logy2"
     ConvertCommand: "convert -layers optimize -loop 0 -delay 40"
     ConvertCommandLast: "-delay 240"
     TimeList:

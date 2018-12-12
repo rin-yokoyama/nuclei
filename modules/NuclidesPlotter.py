@@ -12,7 +12,7 @@ class NuclidesPlotter:
         # plots halflives
         hist = ROOT.TH2F("HalfLife","HalfLife",
                          self.n_range[1]-self.n_range[0], self.n_range[0]-0.5, self.n_range[1]-0.5,
-                         self.n_range[1]-self.z_range[0], self.z_range[0]-0.5, self.z_range[1]-0.5)
+                         self.z_range[1]-self.z_range[0], self.z_range[0]-0.5, self.z_range[1]-0.5)
         for nucl in self.nucl_list:
             hist.Fill(nucl.n,nucl.z,nucl.halflife)
         return hist
@@ -21,9 +21,9 @@ class NuclidesPlotter:
         # plots Pxn values
         hist = ROOT.TH2F("P"+str(x)+"n","P"+str(x)+"n",
                          self.n_range[1]-self.n_range[0], self.n_range[0]-0.5, self.n_range[1]-0.5,
-                         self.n_range[1]-self.z_range[0], self.z_range[0]-0.5, self.z_range[1]-0.5)
+                         self.z_range[1]-self.z_range[0], self.z_range[0]-0.5, self.z_range[1]-0.5)
         for nucl in self.nucl_list:
-            hist.Fill(nucl.n,nucl.z,nucl.pn[x])
+            hist.Fill(nucl.n,nucl.z,float(nucl.pn[x]))
         return hist
 
     def SetPlotRange(self, n_range, z_range):
@@ -32,5 +32,5 @@ class NuclidesPlotter:
             print "[NuclidesPlotter]: invalid plot range"
             return 1
         self.n_range = n_range
-        self.z_range = n_range
+        self.z_range = z_range
         return 0

@@ -1,16 +1,19 @@
-PickledFile: "pickled/frdm_old_ga_exp.pkl"
+PickledFile: "pickled/frdm_old_95ga_exp.pkl"
+OutputFile: "rootfiles/frdm_old_95ga_exp.root"
 
 PopulationGIFMaker:
-    Logy: False
+    Logy: True
 #    PaletteId: 55 #Rainbow
     PaletteId: 56 #kInvertedDarkBodyRadiator
     PopulationPlotter:
-        low_n: 30
-        up_n: 80
-        low_z: 20
-        up_z: 50
-        count_max: 150000
-    ImgName: "img/frdm_old_ga_exp_2"
+        low_n: 45
+        up_n: 66
+        low_z: 30
+        up_z: 43
+        low_a: 85
+        up_a: 96
+        count_max: 100000
+    ImgName: "img/frdm_old_95ga_exp_path"
     ConvertCommand: "convert -layers optimize -loop 0 -delay 40"
     ConvertCommandLast: "-delay 240"
     TimeList:
@@ -42,3 +45,4 @@ PopulationGIFMaker:
         - 52428.8
         - 104857.6
         - 1.E+10
+        - 1.E+20
